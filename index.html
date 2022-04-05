@@ -39,8 +39,8 @@
                         </div>
 
                         <!-- alert -->
-                        <div class="d-flex align-items-center colorbell">
-                            <div class="bg-white rounded-circle p-2 py-1 me-4">
+                        <div class="d-flex align-items-center colorbell p-3">
+                            <div class="bg-white rounded-circle p-2 me-4">
                                 <i class="fa-solid fa-bell-slash text-info"></i>
                             </div>
 
@@ -61,7 +61,7 @@
 
                         <!-- containerChat -->
 
-                        <div v-for="(element, index) in contacts" role="button" @click="setIndexContact">
+                        <div v-for="(element, index) in contacts" role="button" @click="">
                             <ul class="list-group list-group-flush">
 
                                 <li class="list-group-item">
@@ -116,7 +116,7 @@
 
                         <div class="sfondo-chats p-4 d-flex flex-grow-1 flex-column justify-content-start">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item rounded-3 sent mb-3 align-self-end" v-for="CurrentMessage in contacts[indexContact].messages" :class="CurrentMessage.status">
+                                <li class="list-group-item rounded-3 sent mb-3" v-for="CurrentMessage in contacts[indexContact].messages" :class="CurrentMessage.status">
                                     {{CurrentMessage.message}}
                                 </li>
 

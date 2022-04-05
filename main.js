@@ -4,6 +4,7 @@ var app = new Vue({
     data: {
        
         indexContact: 0,
+        newMessageText: '',
 
         profilo: {
             name: 'Sofia',
