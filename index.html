@@ -27,7 +27,8 @@
                     <div class="col-4 bg-white p-0">
                         <div class="d-flex justify-content-between align-items-center bg-gray">
                             <div class="d-flex align-items-center justify-content-between ">
-                                <img src="./avatar_io.jpg" class="rounded-circle img-profile me-3" alt="profilo">
+                                <img :src="`./avatar${profilo.img}.jpg`" role=button
+                                    class="rounded-circle img-profile me-3" alt="`profilo ${profilo.name}">
                                 <span>{{profilo.name}}</span>
                             </div>
                             <div class="d-flex align-items-center me-2">
@@ -36,7 +37,6 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-
 
                         <!-- alert -->
                         <div class="d-flex align-items-center colorbell">
@@ -55,22 +55,23 @@
                         <div class="input-group input-group-sm">
                             <span class="input-group-text" id="inputGroup-sizing-sm"><i
                                     class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
 
                         <!-- containerChat -->
 
-                        <div>
+                        <div v-for="(element, index) in contacts" role="button" @click="setIndexContact">
                             <ul class="list-group list-group-flush">
 
                                 <li class="list-group-item">
                                     <div class="d-flex justify-content-between ">
                                         <div class="d-flex align-items-center">
-                                            <img src="./202-2024994_profile-icon-profile-logo-no-background.png"
-                                                class="rounded-circle img-profile me-2" alt="profilo">
+                                            <img :src="'./avatar' + element.avatar + '.jpg'"
+                                                class="rounded-circle img-profile me-2"
+                                                alt="foto profilo ${element.name}">
                                             <div>
-                                                <span>Samuele</span>
+                                                <span>{{element.name}}</span>
                                                 <div>
                                                     <p>Ultimo messaggio inviato</p>
                                                 </div>
@@ -85,100 +86,6 @@
 
                                     </div>
                                 </li>
-
-
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between ">
-                                        <div class="d-flex align-items-center">
-                                            <img src="./202-2024994_profile-icon-profile-logo-no-background.png"
-                                                class="rounded-circle img-profile me-2" alt="profilo">
-                                            <div>
-                                                <span>Samuele</span>
-                                                <div>
-                                                    <p>Ultimo messaggio inviato</p>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="d-flex justify-content-end align-items-center">
-                                            <span class="d-flex">11:04</span>
-                                        </div>
-
-                                    </div>
-                                </li>
-
-
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between ">
-                                        <div class="d-flex align-items-center">
-                                            <img src="./202-2024994_profile-icon-profile-logo-no-background.png"
-                                                class="rounded-circle img-profile me-2" alt="profilo">
-                                            <div>
-                                                <span>Samuele</span>
-                                                <div>
-                                                    <p>Ultimo messaggio inviato</p>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="d-flex justify-content-end align-items-center">
-                                            <span class="d-flex">11:04</span>
-                                        </div>
-
-                                    </div>
-                                </li>
-
-
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between ">
-                                        <div class="d-flex align-items-center">
-                                            <img src="./202-2024994_profile-icon-profile-logo-no-background.png"
-                                                class="rounded-circle img-profile me-2" alt="profilo">
-                                            <div>
-                                                <span>Samuele</span>
-                                                <div>
-                                                    <p>Ultimo messaggio inviato</p>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="d-flex justify-content-end align-items-center">
-                                            <span class="d-flex">11:04</span>
-                                        </div>
-
-                                    </div>
-                                </li>
-
-
-                                <li class="list-group-item">
-                                    <div class="d-flex justify-content-between ">
-                                        <div class="d-flex align-items-center">
-                                            <img src="./202-2024994_profile-icon-profile-logo-no-background.png"
-                                                class="rounded-circle img-profile me-2" alt="profilo">
-                                            <div>
-                                                <span>Samuele</span>
-                                                <div>
-                                                    <p>Ultimo messaggio inviato</p>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="d-flex justify-content-end align-items-center">
-                                            <span class="d-flex">11:04</span>
-                                        </div>
-
-                                    </div>
-                                </li>
-
-
                             </ul>
                         </div>
                     </div>
@@ -187,16 +94,16 @@
 
 
                     <!-- DX -->
-                    <div class="col-8  p-0 border ">
+                    <div class="col-8 d-flex flex-column p-0 border ">
                         <div class="d-flex justify-content-between align-items-center  bg-gray ">
 
                             <div class="d-flex align-items-center">
-                                <img src="./202-2024994_profile-icon-profile-logo-no-background.png"
-                                    class="rounded-circle img-profile me-3" alt="profilo">
+                                <img :src="'./avatar' + contacts[indexContact].avatar + '.jpg'" role=button class="rounded-circle img-profile me-3"
+                                    alt="profilo">
 
                                 <div class="d-flex flex-column">
-                                    <span>Nome</span>
-                                    <span>Ultimo meassaggio inviato alle {{}}</span>
+                                    <span>{{contacts[indexContact].name}}</span>
+                                    <span>Ultimo messaggio inviato alle </span>
                                 </div>
                             </div>
 
@@ -207,13 +114,10 @@
                             </div>
                         </div>
 
-                        <div class="sfondo-chats p-4 d-flex flex-column justify-content-around">
+                        <div class="sfondo-chats p-4 d-flex flex-grow-1 flex-column justify-content-start">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item rounded-3 sent mb-3 align-self-end">
-                                    Hai portato a spasso il cane?
-                                </li>
-                                <li class="list-group-item rounded-3 received alig-self-start">
-                                    Messaggio 2
+                                <li class="list-group-item rounded-3 sent mb-3 align-self-end" v-for="CurrentMessage in contacts[indexContact].messages" :class="CurrentMessage.status">
+                                    {{CurrentMessage.message}}
                                 </li>
 
                             </ul>
@@ -226,9 +130,9 @@
                                 <i class="fa-solid fa-face-smile"></i>
                             </span>
 
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm">
-                            <div class="p-2 border bg-gray">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <div class="p-3 border bg-gray">
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
                         </div>
@@ -240,6 +144,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="./main.js"></script>
 </body>
 

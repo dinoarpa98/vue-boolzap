@@ -3,10 +3,10 @@
     
     background-image: 
     linear-gradient(to bottom,
-    #009688 0px,
-    #009688 15vh,
-    #dddbd1 15vh,
-    #d2dbdc 100%);
+    #046b61 0px,
+    #046b61 15vh,
+    #dfded9 15vh,
+    #e2e5e5 100%);
 }
 
 
@@ -27,12 +27,8 @@ p{
     list-style-type: none;
 }
 
-ul{
-    margin-left: 0!important;
-}
-
 .sent{
-    background-color: green;
+    background-color: #D8F8BF;
     border: 1px solid;
     border-radius: 20px;
     width: fit-content;
@@ -43,6 +39,7 @@ ul{
     border: 1px solid;
     border-radius: 20px;
     width:fit-content;
+    
 }
 
 .toAlign{
@@ -53,7 +50,7 @@ ul{
     background-color: #E9EAED;
 }
 
-.sfondochats{
-    background-image: url('./mine.jpg');
+.sfondo-chats{
+    background-image: url("mine.jpg");
     background-size: contain;
 }
