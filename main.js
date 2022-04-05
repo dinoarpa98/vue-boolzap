@@ -171,7 +171,7 @@ var app = new Vue({
 
 },
 
-
+//indexContact
 methods: {
     
     setIndexContact: function (index) {
