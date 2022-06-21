@@ -194,7 +194,7 @@ newMessage: function () {
 
     let newMessageReceived = {
         date: `${Date} ${hour}:${minutes}`,
-        message: 'ok',
+        message: 'Nuovo messaggio',
         status: 'received'
     }
 
@@ -215,8 +215,15 @@ filterContacts: function (e) { // filtra contatti con input
     if (filterN.includes(searchN)) {
         return true
     }
+},
+
+Time: function() { 
+   const date = dayjs().format('HH:mm')
+   return date
+ }
+
 }
-}
-})
+});
+
 
 

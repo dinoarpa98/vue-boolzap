@@ -17,7 +17,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
 
 <div id="root">
-<div class="sfondo p-4">
+<div class="sfondo p-5">
 <div class="container h-100">
 <div class="row h-100">
     <!-- SX -->
@@ -28,8 +28,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <div class="d-flex justify-content-between align-items-center bg-gray">
             <div class="d-flex align-items-center justify-content-between ">
                 <img :src="`./avatar${profilo.img}.jpg`" role=button
-                    class="rounded-circle img-profile me-3" alt="`profilo ${profilo.name}">
-                <span>{{profilo.name}}</span>
+                    class="rounded-circle p-1 img-profile me-3" alt="`profilo ${profilo.name}">
+                <span class="title-custom">{{profilo.name}}</span>
             </div>
             <div class="d-flex align-items-center me-2">
                 <i class="fa-solid fa-circle-notch"></i>
@@ -69,12 +69,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             <div class="d-flex justify-content-between ">
                 <div class="d-flex align-items-center">
                     <img :src="'./avatar' + element.avatar + '.jpg'"
-                        class="rounded-circle img-profile me-2"
+                        class="rounded-circle p-1 img-profile me-2"
                         alt="foto profilo ${element.name}">
                     <div>
-                        <span>{{element.name}}</span>
-                        <div>
-                            <p>Ultimo messaggio inviato {{element.date}} </p>
+                        <span class="title-custom">{{element.name}}</span>
+                        <div class="t-size">
+                            <p>Ultimo messaggio inviato alle: {{Time(IndexContact)}} </p>
                         </div>
                     </div>
 
@@ -92,11 +92,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="d-flex align-items-center">
                 <img :src="'./avatar' + contacts[indexContact].avatar + '.jpg'" role=button
-                    class="rounded-circle img-profile me-3" alt="profilo">
+                    class="rounded-circle p-2 img-profile me-3" alt="profilo">
 
                 <div class="d-flex flex-column">
-                    <span>{{contacts[indexContact].name}}</span>
-                    <span>Ultimo messaggio inviato alle </span>
+                    <span class="title-custom">{{contacts[indexContact].name}}</span>
+                    <span>Ultimo messaggio inviato alle: {{Time(IndexContact)}} </span>
                 </div>
             </div>
 

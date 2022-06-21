@@ -1,5 +1,4 @@
 .sfondo{
-    height: 100vh;
     
     background-image: 
     linear-gradient(to bottom,
@@ -67,4 +66,14 @@ p{
 .sfondo-chats{
     background-image: url("mine.jpg");
     background-size: contain;
+}
+
+
+.t-size{
+    font-size:0.8em;
+}
+
+.title-custom{
+    
+    font-weight:600;
 }
